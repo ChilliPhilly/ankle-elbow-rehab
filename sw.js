@@ -1,5 +1,5 @@
 /* Offline shell. Bump CACHE when files change. */
-const CACHE = "rehab-v1";
+const CACHE = "rehab-v2";
 const SHELL = ["./", "./index.html", "./app.css", "./data.js", "./app.js", "./manifest.webmanifest"];
 
 self.addEventListener("install", (e) => {
@@ -9,7 +9,8 @@ self.addEventListener("install", (e) => {
 self.addEventListener("activate", (e) => {
   e.waitUntil(
     caches.keys()
-      .then((keys) => Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k))))
+      // keep this version's shell AND its runtime thumbnail cache (CACHE + "-thumbs")
+      .then((keys) => Promise.all(keys.filter((k) => !k.startsWith(CACHE)).map((k) => caches.delete(k))))
       .then(() => self.clients.claim())
   );
 });
@@ -24,8 +25,12 @@ self.addEventListener("fetch", (e) => {
     e.respondWith(
       caches.open(CACHE + "-thumbs").then((c) =>
         c.match(req).then((hit) =>
-          hit || fetch(req).then((res) => { if (res.ok) c.put(req, res.clone()); return res; })
-                      .catch(() => hit || Response.error())
+          // NOTE: <img> loads these cross-origin with no-cors, so the response is opaque
+          // (status 0, ok === false). Opaque responses are still cacheable and still render.
+          hit || fetch(req).then((res) => {
+            if (res && (res.ok || res.type === "opaque")) c.put(req, res.clone());
+            return res;
+          }).catch(() => hit || Response.error())
         )
       )
     );
