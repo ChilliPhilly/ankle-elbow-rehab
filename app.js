@@ -299,7 +299,7 @@ document.getElementById("importFile").addEventListener("change", (e) => { if (e.
    (GitHub Pages marks everything max-age=600). And when a new worker takes control,
    reload once — otherwise a deploy needs two refreshes: one to install the new
    worker, another to actually see it. */
-const BUILD = "2026-09-16 · v5";
+const BUILD = "2026-09-16 · v6";
 const stampEl = document.getElementById("buildStamp");
 if (stampEl) stampEl.textContent = BUILD;
 

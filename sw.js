@@ -1,5 +1,5 @@
 /* Offline shell. Bump CACHE when files change. */
-const CACHE = "rehab-v5";
+const CACHE = "rehab-v6";
 const SHELL = ["./", "./index.html", "./app.css", "./data.js", "./app.js", "./manifest.webmanifest"];
 
 // GitHub Pages serves everything with `cache-control: max-age=600`, and fetch() inside a
