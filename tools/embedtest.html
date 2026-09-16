@@ -1,0 +1,48 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Embed Test</title></head><body>
+<h1>YouTube embeddability test</h1><pre id="out">starting…</pre>
+<div id="pool"></div>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+const IDS = ['XF5YDmVyhHw', 'x1LhV2nj01Q', 'NvTP3sHYLUY', '9fhuSSsHckE', 'Lv9rklLUp2k', 'DoAYETkOLUs', 'vj1Bm90f5jU', 'kZSJlG6ntWg', 'Jy0aMkLNsKo', 'TbXGtsx3Y3Y', 'avvE2lZujCA', 'xfrncpP5ONQ', 'QFgPY6oJWcA', '4VKOYMVHh4k', 'v_zjz5mOvuY', '50YDq8_OA_w', 'KoJjoap2drQ', 'DRxtaRk-2LU', 'mzxXYtmkY6o', 'Dtgh2_LFkBQ', 'J5F2GbSxTvQ', 'PNiCgb5mJW4', 'mwLYbnOyuaQ', 'NM7HU60k-SQ', '7srjK2p6T6c', '3hQudL1g2dw', 'fg3ZTkmm7es', 'vOiHvzj5XhA', 'i1uM-CbfTBo', 'vs87hPGdnCc', 'qeIK3bkD-vA', 'dgbhiejP7oI', '5wUk8wQNUT8', 'hjprPAnfqoQ', '7SIfCcfP4g0', 'j0nl5dWuqN4', '7zi47B5sgsI', 'XDBHOQoAa3w', '10GaQRD5ap0', 'aLZfpWTk69U', 'ZG-5lUzgoqQ', 'glnA5hh4EXs', 'I_qwpiYeGPg', 'Gmv2W7A_wZ4', 'Y-7r3eKLlgM', '63N_0rzD3KI', 'tYKOfpTpcwU', 'CXwk1L9mdVc', 's3myFH0kx7M', 'NDjGDzex_xA', 'zC3nLlEvin4', 'BRVDS6HVR9Q', 'Iz1kGNIfS3Y', 'KhXiqxGxu1s', 'H5Wr4lNYfn8', 'ZrpRBgswtHs', 'Zr8hHd2Q2Eo', 'cd_38C6LuvY', 'IMNWDRCNoh8', 'CcSKoDZU-TE', 'DgTlETfEuEU', '-U_zdOpYzoo', '9XVf_yGLXNk', 'OVuQ4rJfFEE', 'nZHS1gWMc6I', 'UJmxo-r9Wac', '10T4-2c6108', 'T32_-5ylVbA', 'p5WNABLKwcU', 'Zk1_P8zsGjY'];
+const results = {};
+let ready = false;
+function onYouTubeIframeAPIReady(){ ready = true; }
+window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
+
+function testOne(id){
+  return new Promise(resolve => {
+    const host = document.createElement('div');
+    host.id = 'p_' + id.replace(/[^A-Za-z0-9]/g,'_');
+    document.getElementById('pool').appendChild(host);
+    let done = false;
+    const finish = (verdict) => {
+      if (done) return; done = true;
+      results[id] = verdict;
+      try { player && player.destroy && player.destroy(); } catch(e){}
+      resolve(verdict);
+    };
+    const timer = setTimeout(()=>finish('TIMEOUT'), 12000);
+    const player = new YT.Player(host.id, {
+      videoId: id, width: 200, height: 120,
+      playerVars: { origin: location.origin },
+      events: {
+        onReady: () => { clearTimeout(timer); finish('EMBED_OK'); },
+        onError: (e) => { clearTimeout(timer); finish('ERROR_' + e.data); }
+      }
+    });
+  });
+}
+
+async function run(){
+  while(!ready) await new Promise(r=>setTimeout(r,200));
+  const BATCH = 6;
+  for (let i=0; i<IDS.length; i+=BATCH){
+    await Promise.all(IDS.slice(i,i+BATCH).map(testOne));
+    document.getElementById('out').textContent =
+      'tested ' + Object.keys(results).length + '/' + IDS.length + '\n' + JSON.stringify(results,null,1);
+  }
+  window.__DONE__ = true;
+  document.getElementById('out').textContent = 'DONE\n' + JSON.stringify(results,null,1);
+}
+run();
+</script></body></html>

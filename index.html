@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1220">
+<meta name="description" content="A 12-week home rehab programme for anterior ankle impingement and distal biceps tendinopathy. Offline-capable, phone-first, with verified demo videos.">
+<title>12-Week Ankle &amp; Elbow Rehab</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hdr">
+  <div class="wrap">
+    <p class="kicker">12-week home programme</p>
+    <h1>Ankle &amp; Elbow Rehab</h1>
+    <p class="sub">Anterior ankle impingement &middot; Distal biceps tendinopathy</p>
+  </div>
+</header>
+
+<div class="painbar" role="note" aria-label="Pain monitoring rule">
+  <div class="wrap">
+    <h2>The pain rule &mdash; read this before every session</h2>
+    <ol class="painrule">
+      <li><b>Up to 3/10 pain during an exercise is acceptable.</b> Rehab does not have to be pain-free.</li>
+      <li><b>It must settle within 24 hours.</b> Back to your normal baseline by the next day.</li>
+      <li><b>If it is worse the next morning, reduce the load.</b> Drop the weight, the reps, or the range at the next session &mdash; do not push through.</li>
+    </ol>
+    <p class="painnote">Morning stiffness or soreness that is <em>worse than yesterday</em> is the signal that matters. One bad day is information, not a failure &mdash; three in a row means the programme is too heavy.</p>
+  </div>
+</div>
+
+<nav class="nav" id="nav" aria-label="Section navigation">
+  <div class="wrap navrow">
+    <a href="#rules">Limits</a>
+    <a href="#phases">Phases</a>
+    <a href="#week">Week</a>
+    <a href="#programme">Exercises</a>
+    <a href="#calendar">Calendar</a>
+    <a href="#progress">Progress</a>
+  </div>
+</nav>
+
+<main id="main">
+
+  <!-- HARD LIMITS -->
+  <section id="rules" class="sect">
+    <div class="wrap">
+      <h2 class="h2">Hard limits</h2>
+      <p class="lead">These are not preferences. Every exercise in this programme was chosen or modified to respect them.</p>
+
+      <div class="cards2">
+        <article class="limit limit--ankle">
+          <h3>Ankle &mdash; never enter end-range dorsiflexion</h3>
+          <p>Your pain is at the front-outside of the ankle, only at end-range dorsiflexion under load, and the joint is not tender to touch. That pattern is compression of tissue at the front of the joint, so the treatment is to <b>stay out of that range while loading everything around it</b>.</p>
+          <ul class="no">
+            <li><b>No</b> knee-to-wall stretching or calf stretching against a wall</li>
+            <li><b>No</b> deep-squat ankle mobility drills</li>
+            <li><b>No</b> heel-dropped calf raises off a step &mdash; every heel raise stops at flat foot</li>
+            <li><b>No</b> squat or lunge below the depth where you feel the pinch; front heel stays elevated</li>
+          </ul>
+          <p class="yes"><b>Yes to:</b> calf strength and endurance, evertor (peroneal) strength in mid-range, balance, hip control, and landing mechanics.</p>
+        </article>
+
+        <article class="limit limit--elbow">
+          <h3>Elbow &mdash; no wide-grip pulling</h3>
+          <p>Pain at the elbow crease with curls, reverse curls and wide-grip chin-ups points to the distal biceps tendon. That tendon does <b>two</b> jobs &mdash; it bends the elbow <em>and</em> it is your most powerful forearm supinator. A programme that only trains curls trains half of it.</p>
+          <ul class="no">
+            <li><b>No</b> wide-grip chin-ups or pull-ups at any stage</li>
+            <li><b>No</b> jumping straight to full-range curls &mdash; isometrics first, then slow eccentrics, then full range</li>
+            <li><b>No</b> heavy reverse (pronated) curls until phase 3</li>
+          </ul>
+          <p class="yes"><b>Yes to:</b> neutral or narrow grip pulling, loaded supination, and progressive eccentric loading.</p>
+        </article>
+      </div>
+
+      <div class="callout callout--warn">
+        <h3>What this programme is, and is not</h3>
+        <p>This is a structured loading plan built around two <em>suspected</em> diagnoses that you described. It is not a diagnosis and it is not a substitute for assessment by a physiotherapist or sports doctor &mdash; particularly for the ankle, where repeated inversion sprains can leave behind bony changes, an osteochondral lesion or a loose body that need imaging rather than exercise. If pain is not trending down by the end of phase 1, get it looked at.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHASES -->
+  <section id="phases" class="sect sect--alt">
+    <div class="wrap">
+      <h2 class="h2">Three phases, twelve weeks</h2>
+      <p class="lead">Move on when you meet the criteria, not when the calendar says so. Staying an extra week in a phase costs you nothing; skipping ahead costs you the whole programme.</p>
+      <div id="phaseCards" class="phasecards"></div>
+    </div>
+  </section>
+
+  <!-- WEEKLY STRUCTURE -->
+  <section id="week" class="sect">
+    <div class="wrap">
+      <h2 class="h2">Your week</h2>
+      <p class="lead">Five sessions a week. Days are a suggestion &mdash; keep 48 hours between the two heavy elbow sessions, and never do two heavy ankle sessions back to back.</p>
+      <div class="phasepick" role="tablist" aria-label="Choose phase">
+        <button class="pbtn is-on" data-phase="1" role="tab" aria-selected="true">Phase 1 &middot; Wk 1&ndash;4</button>
+        <button class="pbtn" data-phase="2" role="tab" aria-selected="false">Phase 2 &middot; Wk 5&ndash;8</button>
+        <button class="pbtn" data-phase="3" role="tab" aria-selected="false">Phase 3 &middot; Wk 9&ndash;12</button>
+      </div>
+      <div id="weekGrid" class="weekgrid"></div>
+      <div class="callout">
+        <h3>Running, AFL, snowboarding, kitesurfing</h3>
+        <p><b>Phase 1:</b> keep running only if it is currently pain-free during and the next morning &mdash; flat ground, no hills, no speed work. Hills and forefoot-heavy running drive dorsiflexion and are the most likely thing to flare the ankle. Kitesurfing loads the elbow hard through the bar; park it for phase 1.</p>
+        <p><b>Phase 2:</b> rebuild running volume by no more than 10% a week. Add strides on flat ground late in the phase. Short kite sessions with a harness-heavy, arms-light technique once the elbow tolerates eccentric chin-ups.</p>
+        <p><b>Phase 3:</b> add change of direction, then contested AFL work. Half-marathon-specific long runs belong here, not earlier. Snowboarding is mostly a mid-range ankle in a stiff boot, which is kind to you &mdash; but the landing and edge-catch risk is real, so it goes after the landing work is solid.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXERCISE LIBRARY -->
+  <section id="programme" class="sect sect--alt">
+    <div class="wrap">
+      <h2 class="h2">The exercises</h2>
+      <p class="lead">Every exercise has a verified demo video. Tap the image to play it inline.</p>
+      <div class="filters" role="group" aria-label="Filter exercises">
+        <button class="fbtn is-on" data-filter="all">All</button>
+        <button class="fbtn" data-filter="ankle">Ankle</button>
+        <button class="fbtn" data-filter="elbow">Elbow</button>
+        <button class="fbtn" data-filter="p1">Phase 1</button>
+        <button class="fbtn" data-filter="p2">Phase 2</button>
+        <button class="fbtn" data-filter="p3">Phase 3</button>
+      </div>
+      <div id="exList" class="exlist"></div>
+    </div>
+  </section>
+
+  <!-- CALENDAR -->
+  <section id="calendar" class="sect">
+    <div class="wrap">
+      <h2 class="h2">12-week calendar</h2>
+      <p class="lead">Tick every session you complete. Saved on this device &mdash; it survives reloads and works offline.</p>
+
+      <div class="stats">
+        <div class="stat"><span class="statnum" id="statPct">0%</span><span class="statlab">complete</span></div>
+        <div class="stat"><span class="statnum" id="statDone">0<small>/60</small></span><span class="statlab">sessions</span></div>
+        <div class="stat"><span class="statnum" id="statStreak">0</span><span class="statlab">current streak</span></div>
+        <div class="stat"><span class="statnum" id="statBest">0</span><span class="statlab">best streak</span></div>
+      </div>
+      <div class="bar"><div class="barfill" id="barFill"></div></div>
+
+      <div id="calGrid" class="cal"></div>
+
+      <div class="calactions">
+        <button class="btn btn--ghost" id="resetCal">Reset all ticks</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRESS LOG -->
+  <section id="progress" class="sect sect--alt">
+    <div class="wrap">
+      <h2 class="h2">Progress log</h2>
+      <p class="lead">Two numbers tell you whether this is working. Record them on the same day each week, at the same time of day, before training.</p>
+
+      <div class="cards2">
+        <article class="test">
+          <h3>Single-leg heel raise &mdash; reps to failure</h3>
+          <p class="testwhy">Your primary calf capacity measure. A healthy active adult should manage roughly 20&ndash;30 good reps. Side-to-side difference matters more than the absolute number &mdash; you want the injured side within 10% of the other.</p>
+          <p><b>Protocol:</b> stand on flat floor, fingertips on a wall for balance only. Rise to full height, lower to flat foot &mdash; <b>no heel drop below the toes</b>. About 2 seconds per rep. Stop when your heel height drops or you need to push on the wall.</p>
+          <div class="vid" data-vid="TbXGtsx3Y3Y" data-title="Single Leg Heel Raise Test" data-chan="Evolution Physical Therapy &amp; Fitness"></div>
+          <p class="vnote"><b>Modified for you:</b> the demo is performed on the floor, which is what you want. Ignore any cue to lower past flat.</p>
+        </article>
+
+        <article class="test test--flag">
+          <h3>Knee-to-wall distance <span class="flag">read the caution</span></h3>
+          <p class="testwhy">You asked for this, so it is here &mdash; but it needs a caveat. Knee-to-wall <em>is</em> end-range dorsiflexion under load. It is the exact movement your hard limit rules out as an exercise. As a once-a-fortnight measurement it is useful; as a weekly habit it risks poking the thing you are trying to calm down.</p>
+          <p><b>How to take it safely:</b> measure <b>pain-limited</b>, not maximum. Foot square to the wall, heel stays down, drive the knee forward and <b>stop at the first hint of pinch</b> &mdash; not past it. Record the distance in centimetres from the big toe to the wall at that point. Hold nothing; do not repeat it five times to "warm into it". That is a stretch, and stretching is off the menu.</p>
+          <p><b>What good looks like:</b> the pain-free distance increasing week to week is the win &mdash; it means the joint is tolerating more range before it complains. Deliberately no video here: the standard demos all coach you to push into the end range.</p>
+        </article>
+      </div>
+
+      <div class="tablewrap">
+        <table class="log" id="logTable">
+          <caption>Tap any cell to type. Saved automatically on this device.</caption>
+          <thead>
+            <tr>
+              <th scope="col" class="stick">Week</th>
+              <th scope="col">Date</th>
+              <th scope="col">KTW&nbsp;L<small>cm</small></th>
+              <th scope="col">KTW&nbsp;R<small>cm</small></th>
+              <th scope="col">Heel&nbsp;raise&nbsp;L<small>reps</small></th>
+              <th scope="col">Heel&nbsp;raise&nbsp;R<small>reps</small></th>
+              <th scope="col">Ankle&nbsp;pain<small>0&ndash;10</small></th>
+              <th scope="col">Elbow&nbsp;pain<small>0&ndash;10</small></th>
+              <th scope="col">Notes</th>
+            </tr>
+          </thead>
+          <tbody id="logBody"></tbody>
+        </table>
+      </div>
+
+      <div class="calactions">
+        <button class="btn" id="exportBtn">Export my data</button>
+        <label class="btn btn--ghost" for="importFile">Import backup</label>
+        <input type="file" id="importFile" accept="application/json" hidden>
+      </div>
+      <p class="fineprint">Everything you type lives only in this browser, on this device. Nothing is sent anywhere &mdash; there is no account and no server. Clearing your browser data will erase it, so export a backup now and then.</p>
+    </div>
+  </section>
+
+  <!-- VIDEO VERIFICATION -->
+  <section id="sources" class="sect">
+    <div class="wrap">
+      <h2 class="h2">About the videos</h2>
+      <p class="lead">Every video ID on this page was checked twice on <b>16 September 2026</b>: once against YouTube's oEmbed endpoint to confirm the video is live and public, and once by loading it through the YouTube IFrame Player API in a real browser to confirm it actually plays embedded. All <b id="vidCount">23</b> passed both checks.</p>
+      <div class="callout">
+        <h3>Two honest caveats</h3>
+        <p><b>Videos need a connection.</b> The page, your ticks and your log all work offline after the first load. The videos are hosted on YouTube, so they will not play without a network. The thumbnails are cached, so you will still see which exercise is which.</p>
+        <p><b>Some demos show the standard version, not your version.</b> Where a video demonstrates something your hard limits rule out &mdash; a heel drop off a step, a supinated chin-up grip, a full-range dorsiflexion pull &mdash; the exercise card carries a <span class="chipinline">Modified for you</span> note saying exactly what to do differently. Follow the card, not the video.</p>
+      </div>
+      <details class="srcdetails">
+        <summary>Full source list with channels</summary>
+        <div id="srcList" class="srclist"></div>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>Built for a home gym: resistance bands, dumbbells, a step, a pull-up bar.</p>
+    <p class="fineprint">General information only, not personalised medical advice. If pain is sharp, if the ankle locks or gives way, or if you felt a pop at the elbow with sudden weakness in supination, stop and see a clinician.</p>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

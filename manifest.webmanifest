@@ -1,0 +1,13 @@
+{
+  "name": "12-Week Ankle & Elbow Rehab",
+  "short_name": "Rehab",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0f4c81",
+  "description": "A 12-week home rehab programme for anterior ankle impingement and distal biceps tendinopathy.",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
