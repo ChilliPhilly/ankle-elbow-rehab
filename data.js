@@ -321,11 +321,11 @@ const EXERCISES = [
     sets: "5 sets", reps: "30 second holds each arm", tempo: "Static hold in mid-supination",
     rest: "45 s", freq: "Daily in phase 1",
     cues: [
-      "Elbow at 90° and tucked hard against your side, forearm across your body, palm facing down.",
-      "Put your other hand across the thumb side of the working wrist and push down, while the working forearm tries to turn the palm up. Nothing moves — you are fighting your own hand.",
-      "Build the pressure over two seconds, hold it steady, and keep breathing. The elbow must not drift away from your ribs."
+      "Elbow bent to 90° and pinned against your ribs, forearm pointing straight ahead, palm facing the floor.",
+      "This is a twist, not a lift. Try to rotate your palm up to face the ceiling — like turning a doorknob or showing someone your palm — while your other hand grips across the back of your working hand and blocks the rotation.",
+      "Build the pressure over about two seconds, hold it steady, and keep breathing. Nothing actually moves: not the palm, not the forearm, not the elbow."
     ],
-    mistake: "Letting the shoulder rotate to create the turn. Pin the upper arm against your ribs and make the forearm do the work.",
+    mistake: "Turning it into a curl. If your whole forearm is pressing upward toward your shoulder, you are training elbow flexion — that is the isometric biceps hold, a different exercise. The only thing trying to move here is your palm rotating toward the ceiling.",
     prog: "Self-resistance is easiest to dose — push harder for more load, and you can feel exactly where pain starts. Progress by adding pressure and hold time, then swap to a band anchored so it resists the palm turning up, and finally to the dumbbell rotations in phase 2.",
     videoNote: "The demo resists with the other hand, which is what the cues above describe and needs no setup. The band version works identically: anchor the band so it fights your palm turning up, take up the tension at about halfway supinated, and hold there.",
     video: { id: "JhLTDp5GtCs", title: "Elbow Supination Isometric Exercises", chan: "Rehab My Patient" }

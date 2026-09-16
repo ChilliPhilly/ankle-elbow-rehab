@@ -294,7 +294,26 @@ document.getElementById("resetCal").addEventListener("click", () => {
 document.getElementById("exportBtn").addEventListener("click", exportData);
 document.getElementById("importFile").addEventListener("change", (e) => { if (e.target.files[0]) importData(e.target.files[0]); e.target.value = ""; });
 
-/* offline */
+/* ---------- offline + self-updating ----------
+   updateViaCache:"none" stops the browser serving sw.js from its own HTTP cache
+   (GitHub Pages marks everything max-age=600). And when a new worker takes control,
+   reload once — otherwise a deploy needs two refreshes: one to install the new
+   worker, another to actually see it. */
+const BUILD = "2026-09-16 · v5";
+const stampEl = document.getElementById("buildStamp");
+if (stampEl) stampEl.textContent = BUILD;
+
 if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+  const hadController = !!navigator.serviceWorker.controller;
+  let reloading = false;
+  navigator.serviceWorker.addEventListener("controllerchange", () => {
+    if (!hadController || reloading) return; // a first-ever install must not reload
+    reloading = true;
+    location.reload();
+  });
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("sw.js", { updateViaCache: "none" })
+      .then((reg) => { reg.update(); setInterval(() => reg.update(), 60 * 60 * 1000); })
+      .catch(() => {});
+  });
 }
