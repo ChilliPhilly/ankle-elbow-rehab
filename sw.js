@@ -1,5 +1,5 @@
 /* Offline shell. Bump CACHE when files change. */
-const CACHE = "rehab-v3";
+const CACHE = "rehab-v4";
 const SHELL = ["./", "./index.html", "./app.css", "./data.js", "./app.js", "./manifest.webmanifest"];
 
 self.addEventListener("install", (e) => {

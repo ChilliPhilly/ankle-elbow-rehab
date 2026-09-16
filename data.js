@@ -321,13 +321,14 @@ const EXERCISES = [
     sets: "5 sets", reps: "30 second holds each arm", tempo: "Static hold in mid-supination",
     rest: "45 s", freq: "Daily in phase 1",
     cues: [
-      "Elbow at 90° and tucked against your side; band anchored so it resists your palm turning up.",
-      "Turn the palm to about halfway up and hold it there against the band.",
-      "The elbow does not move and does not drift — the rotation happens in the forearm."
+      "Elbow at 90° and tucked hard against your side, forearm across your body, palm facing down.",
+      "Put your other hand across the thumb side of the working wrist and push down, while the working forearm tries to turn the palm up. Nothing moves — you are fighting your own hand.",
+      "Build the pressure over two seconds, hold it steady, and keep breathing. The elbow must not drift away from your ribs."
     ],
-    mistake: "Letting the shoulder rotate to create the turn. Pin the upper arm and make the forearm do it.",
-    prog: "Shorten the band or step further from the anchor to increase resistance. Then move to the dumbbell rotations in phase 2.",
-    video: { id: "I_qwpiYeGPg", title: "Supination (Isometric) – Band", chan: "Physio REHAB" }
+    mistake: "Letting the shoulder rotate to create the turn. Pin the upper arm against your ribs and make the forearm do the work.",
+    prog: "Self-resistance is easiest to dose — push harder for more load, and you can feel exactly where pain starts. Progress by adding pressure and hold time, then swap to a band anchored so it resists the palm turning up, and finally to the dumbbell rotations in phase 2.",
+    videoNote: "The demo resists with the other hand, which is what the cues above describe and needs no setup. The band version works identically: anchor the band so it fights your palm turning up, take up the tension at about halfway supinated, and hold there.",
+    video: { id: "JhLTDp5GtCs", title: "Elbow Supination Isometric Exercises", chan: "Rehab My Patient" }
   },
   {
     id: "hammer-curl", region: "elbow", phases: [1, 2, 3],

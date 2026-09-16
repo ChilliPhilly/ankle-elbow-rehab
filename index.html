@@ -196,10 +196,11 @@
   <section id="sources" class="sect">
     <div class="wrap">
       <h2 class="h2">About the videos</h2>
-      <p class="lead">Every video ID on this page was checked twice on <b>16 September 2026</b>: once against YouTube's oEmbed endpoint to confirm the video is live and public, and once by loading it through the YouTube IFrame Player API in a real browser to confirm it actually plays embedded. All <b id="vidCount">23</b> passed both checks.</p>
+      <p class="lead">Every video ID on this page was checked three ways on <b>16 September 2026</b>: against YouTube's oEmbed endpoint to confirm the video is live and public; against the watch page's <code>playabilityStatus</code> to catch videos that are members-only, private, age-gated or region-blocked; and by loading it through the YouTube IFrame Player API in a real browser to confirm it actually plays embedded. All <b id="vidCount">24</b> pass all three.</p>
       <div class="callout">
         <h3>Two honest caveats</h3>
         <p><b>Videos need a connection.</b> The page, your ticks and your log all work offline after the first load. The videos are hosted on YouTube, so they will not play without a network. The thumbnails are cached, so you will still see which exercise is which.</p>
+        <p><b>The members-only trap.</b> The playability check exists because one video originally on this page &mdash; a banded supination isometric &mdash; turned out to be members-only. It passed both of the other checks: oEmbed returned a real title, and the player loaded fine, because a paywalled video still loads a working player, it just shows a join prompt instead of the footage. Only the watch-page status reveals it. It has been replaced, and every remaining video re-checked.</p>
         <p><b>Some demos show the standard version, not your version.</b> Where a video demonstrates something your hard limits rule out &mdash; a heel drop off a step, a supinated chin-up grip, a full-range dorsiflexion pull &mdash; the exercise card carries a <span class="chipinline">Modified for you</span> note saying exactly what to do differently. Follow the card, not the video.</p>
       </div>
       <details class="srcdetails">

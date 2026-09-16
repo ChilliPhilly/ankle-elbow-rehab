@@ -23,14 +23,21 @@ Built for a home gym: resistance bands, dumbbells, a step, a pull-up bar.
 
 ## Video verification
 
-Every video ID was verified on **16 September 2026** by two independent checks:
+Every video ID was verified on **16 September 2026** by three independent checks:
 
 1. **Liveness** — YouTube's oEmbed endpoint, confirming the video is public and returning its real title and channel
    (`tools/verify_videos.sh`).
-2. **Embeddability** — each ID loaded through the YouTube IFrame Player API in a real browser, capturing `onError`
+2. **Playability** — the watch page's `playabilityStatus`, which must be `OK`. This catches members-only, private,
+   age-gated and region-blocked videos. Also in `tools/verify_videos.sh`.
+3. **Embeddability** — each ID loaded through the YouTube IFrame Player API in a real browser, capturing `onError`
    (codes 101/150 mean embedding is disabled). `tools/embedtest.html`.
 
-70 candidates were checked; all 70 passed both. The 24 used on the site are the best match per exercise.
+**Why check 2 exists.** The original banded-supination video (`I_qwpiYeGPg`, Physio REHAB) was members-only and
+passed checks 1 and 3 — oEmbed returns a normal title for gated videos, and the IFrame API fires `onReady` because
+a paywalled video still loads a *working player*; it just renders a join prompt instead of the footage. Only
+`playabilityStatus: UNPLAYABLE` on the watch page exposes it. It has been replaced with `JhLTDp5GtCs`
+(Rehab My Patient) and all 24 in-use videos re-verified against all three checks.
+
 No URL on this site was guessed or constructed from memory.
 
 Where a verified demo shows the *standard* version of a movement that the hard limits rule out — a heel drop off a
@@ -40,7 +47,7 @@ note stating exactly what to do differently.
 Re-run the checks any time:
 
 ```bash
-./tools/verify_videos.sh tools/ids.txt
+./tools/verify_videos.sh tools/ids_live.txt   # every video currently used on the site
 ```
 
 ## Offline
